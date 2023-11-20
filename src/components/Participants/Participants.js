@@ -57,9 +57,12 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     width: '100% !important',
+    padding: '10px !important'
   },
   desktopMargin: {
-    margin: '16px', // Adjust the margin value as needed
+    marginRight: '0px',
+    marginLeft: '0px !important',
+    padding: '40px 5px !important'
   }
 }));
 
