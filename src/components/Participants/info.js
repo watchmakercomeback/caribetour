@@ -21,10 +21,9 @@ const participants = [
         direccion: 'Carrera 53 #82-86 local 6',
         telefono: 'N/A',
         horario: [
-            'Martes y Miércoles: 12:00pm - 10:00pm',
-            'Jueves: 12:00pm - 10:00pm',
-            'Viernes y Sábado: 4:00pm - 2:00pm',
-            'Domingo: 4:00pm - 11:00pm',
+            'Lunes a Viernes de 12:00pm-10:00pm',
+            'Sábados 4:00-11:00pm',
+            'Domingos 3:00-10:00pm',
         ],
         googleMapsLink: 'https://maps.app.goo.gl/4nWkGAmBjCT3rxA6A?g_st=iwb',
         burger:"Truffle burger",
@@ -69,7 +68,7 @@ const participants = [
             'sábado 04:30 pm a 12:00 am'
         ],
         googleMapsLink: 'https://maps.app.goo.gl/iKbp56xEKKx5gjqq5',
-        burger:"La 10",
+        burger:"LA 10 DE MESSI",
         descripcion:"Si señores la 10 de Messi 🍔 Nuestro delicioso pan de papa, 125 gr de carne Angus , Queso Monster, piña caramelizada, tocineta ahumada, cebolla Crispy, salsa Majestic y lo mejor de todo Chorizo argentino. En serio está burger tiene un 10.",
         burgerImage:"/assets/burgers/MAJESTIC.jpg"
     },
@@ -102,7 +101,7 @@ const participants = [
         telefono: '3053868251',
         horario: ['12pm - 11pm'],
         googleMapsLink: 'https://g.co/kgs/LfSLGZ',
-        burger:"Dorian Burger ( Machete burger)",
+        burger:"Dorian Burger",
         descripcion:"Pan tipo brioche, blend de carne madurada y chorizo argentino, tocineta ahumada, Cebolla caramelizada en panela, chimichurri, chips de plátano, y salsa de ajo.",
         burgerImage:"/assets/burgers/MACHETE.jpg"
     },
