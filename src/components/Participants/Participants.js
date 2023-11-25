@@ -129,8 +129,9 @@ const Participants = () => {
        <ParticipantModal
         open={modalOpen}
         onClose={handleCloseModal}
-        participantName={selectedParticipant?.instagram} 
-        participantHorario={selectedParticipant?.horario}
+        burgerImageLink={selectedParticipant?.burgerImage}
+        burgerName={selectedParticipant?.burger}
+        burgerDescription={selectedParticipant?.descripcion}
       />
     </Grid>
   );

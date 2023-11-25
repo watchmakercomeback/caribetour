@@ -6,6 +6,7 @@ import {
   IconButton,
   Backdrop,
   Fade,
+  Grid
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { makeStyles } from '@mui/styles';
@@ -21,12 +22,16 @@ const useStyles = makeStyles((theme) => ({
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    maxWidth: '80%',
     textAlign: 'center',
     color: '#fff',
     position: 'relative',
     zIndex: '9999999',
     borderRadius: theme.shape.borderRadius,
+    width: '80%',
+
+    [theme.breakpoints.up('md')]: {
+      width: '45%',
+    },
   },
   closeButton: {
     position: 'absolute  !important',
@@ -42,16 +47,41 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
+
+    [theme.breakpoints.up('md')]: {
+      maxHeight: '500px',
+    }
   },
   image: {
     width: 'auto',
     maxWidth: '100%',
     height: 'auto',
     maxHeight: '300px',
+    [theme.breakpoints.up('md')]: {
+      maxHeight: '500px',
+    }
+  },
+  title: {
+    marginTop: '20px  !important',
+    [theme.breakpoints.up('md')]: {
+      marginTop: '20px  !important',
+    },
+  },
+  description: {
+    marginTop: '20px  !important',
+    [theme.breakpoints.up('md')]: {
+      marginTop: '20px !important',
+      paddingLeft: '30px',
+      paddingRight: '30px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: '10px',
+      paddingRight: '10px',
+    },
   }
 }));
 
-const ParticipantModal = ({ open, onClose, participantName, participantHorario }) => {
+const ParticipantModal = ({ open, burgerImageLink, onClose, burgerName, burgerDescription }) => {
   const classes = useStyles();
 
   return (
@@ -70,20 +100,22 @@ const ParticipantModal = ({ open, onClose, participantName, participantHorario }
           <IconButton className={classes.closeButton} onClick={onClose}>
             <CloseIcon />
           </IconButton>
-          <div className={classes.imageContainer}>
-              <img
-                src='/assets/hamburguesa.jpg'
-                alt='burguer'
-                className={classes.image}
-              />
-            </div>
-          <Typography variant="h6">{participantName}</Typography>
-          <Typography variant="body1">Horario:</Typography>
-          {participantHorario?.map((day) => (
-            <Typography variant="body2" key={day}>
-              {day}
-            </Typography>
-          ))}
+          <Grid container spacing={0} className={classes.container}>
+          <Grid item xs={12} sm={12} md={4} lg={3}>
+            <div className={classes.imageContainer}>
+                <img
+                  src={burgerImageLink}
+                  alt='burguer'
+                  className={classes.image}
+                />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={8} lg={9}>
+              <Typography variant="h6" className={classes.title}>{burgerName}</Typography>
+              <Typography variant="body1" className={classes.description}>{burgerDescription}</Typography>
+            </Grid>
+            
+          </Grid>
         </Box>
       </Fade>
     </Modal>
